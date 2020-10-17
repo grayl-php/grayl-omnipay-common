@@ -1,0 +1,40 @@
+{
+  "name": "grayl/omnipay-common",
+  "description": "Omnipay common functionality for the Grayl PHP framework.",
+  "keywords": [
+    "grayl",
+    "omnipay",
+    "common"
+  ],
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Grogwood LLC",
+      "email": "dev@grogwood.com",
+      "homepage": "http://grogwood.com",
+      "role": "Developer"
+    }
+  ],
+  "type": "library",
+  "require": {
+    "grayl/config": "^1",
+    "grayl/gateway-common": "^1",
+    "grayl/mixin-common": "^1",
+    "grayl/store-order": "^1",
+    "league/omnipay": "^3",
+    "php": "~7.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Grayl\\Omnipay\\Common\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Grayl\\Test\\Omnipay\\Common\\": "tests/"
+    }
+  }
+}
