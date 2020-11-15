@@ -27,14 +27,10 @@
       {
 
          // Set the OmnipayGatewayCreditCard fields into the request's credit card parameters
-         $request_data->setCreditCardParameter( 'number',
-                                                $credit_card->getNumber() );
-         $request_data->setCreditCardParameter( 'expiryMonth',
-                                                $credit_card->getExpiryMonth() );
-         $request_data->setCreditCardParameter( 'expiryYear',
-                                                $credit_card->getExpiryYear() );
-         $request_data->setCreditCardParameter( 'cvv',
-                                                $credit_card->getCVV() );
+         $request_data->setCreditCardNumber( $credit_card->getNumber() );
+         $request_data->setCreditCardExpiryMonth( $credit_card->getExpiryMonth() );
+         $request_data->setCreditCardExpiryYear( $credit_card->getExpiryYear() );
+         $request_data->setCreditCardCVV( $credit_card->getCVV() );
       }
 
 
@@ -49,8 +45,7 @@
       {
 
          // Set the transaction reference id from the previous response
-         $request_data->setMainParameter( 'transactionReference',
-                                          $reference_id );
+         $request_data->setTransactionReference( $reference_id );
       }
 
 

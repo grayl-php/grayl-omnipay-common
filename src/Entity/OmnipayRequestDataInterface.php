@@ -123,8 +123,12 @@
       /**
        * Puts a new item into the bag of items
        *
-       * @param array $item The array to store
+       * @param string $name     The item display name
+       * @param int    $quantity The item quantity
+       * @param float  $price    The price of the item
        */
-      public function putItem ( array $item ): void;
+      public function putItem ( string $name,
+                                int $quantity,
+                                float $price ): void;
 
    }

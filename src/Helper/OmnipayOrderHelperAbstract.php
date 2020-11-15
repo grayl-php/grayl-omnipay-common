@@ -56,18 +56,12 @@
       {
 
          // Set the OrderData fields into the request's main parameters
-         $request_data->setMainParameter( 'amount',
-                                          $order_data->getAmount() );
-         $request_data->setMainParameter( 'currency',
-                                          $order_data->getCurrency() );
-         $request_data->setMainParameter( 'description',
-                                          $order_data->getDescription() );
-         $request_data->setMainParameter( 'transactionId',
-                                          $order_data->getOrderID() );
-         $request_data->setMainParameter( 'invoiceNumber',
-                                          $order_data->getOrderID() );
-         $request_data->setMainParameter( 'clientIp',
-                                          $order_data->getIPAddress() );
+         $request_data->setAmount( $order_data->getAmount() );
+         $request_data->setCurrency( $order_data->getCurrency() );
+         $request_data->setDescription( $order_data->getDescription() );
+         $request_data->setTransactionID( $order_data->getOrderID() );
+         $request_data->setInvoiceNumber( $order_data->getOrderID() );
+         $request_data->setClientIP( $order_data->getIPAddress() );
       }
 
 
@@ -83,28 +77,18 @@
 
          // Set the OrderCustomer fields into the request's credit card parameters
          // Name and email
-         $request_data->setCreditCardParameter( 'firstName',
-                                                $order_customer->getFirstName() );
-         $request_data->setCreditCardParameter( 'lastName',
-                                                $order_customer->getLastName() );
-         $request_data->setCreditCardParameter( 'email',
-                                                $order_customer->getEmailAddress() );
+         $request_data->setFirstName( $order_customer->getFirstName() );
+         $request_data->setLastName( $order_customer->getLastName() );
+         $request_data->setEmail( $order_customer->getEmailAddress() );
 
          // Address
-         $request_data->setCreditCardParameter( 'Address1',
-                                                $order_customer->getAddress1() );
-         $request_data->setCreditCardParameter( 'Address2',
-                                                $order_customer->getAddress2() );
-         $request_data->setCreditCardParameter( 'City',
-                                                $order_customer->getCity() );
-         $request_data->setCreditCardParameter( 'Postcode',
-                                                $order_customer->getPostcode() );
-         $request_data->setCreditCardParameter( 'State',
-                                                $order_customer->getState() );
-         $request_data->setCreditCardParameter( 'Country',
-                                                $order_customer->getCountry() );
-         $request_data->setCreditCardParameter( 'Phone',
-                                                $order_customer->getPhoneNumber() );
+         $request_data->setAddress1( $order_customer->getAddress1() );
+         $request_data->setAddress2( $order_customer->getAddress2() );
+         $request_data->setCity( $order_customer->getCity() );
+         $request_data->setPostcode( $order_customer->getPostcode() );
+         $request_data->setState( $order_customer->getState() );
+         $request_data->setCountry( $order_customer->getCountry() );
+         $request_data->setPhone( $order_customer->getPhoneNumber() );
       }
 
 
@@ -121,9 +105,9 @@
          // Loop through each item inside the bag
          foreach ( $order_item_bag->getOrderItems() as $item ) {
             // Add the item as a new array
-            $request_data->putItem( [ 'name'     => $item->getName(),
-                                      'quantity' => $item->getQuantity(),
-                                      'price'    => $item->getPrice(), ] );
+            $request_data->putItem( $item->getName(),
+                                    $item->getQuantity(),
+                                    $item->getPrice() );
          }
       }
 
