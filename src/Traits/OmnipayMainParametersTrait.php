@@ -8,18 +8,11 @@
     * Trait OmnipayMainParametersTrait.
     * The trait for manipulating Omnipay main parameters in a OmnipayRequestDataAbstract entity.
     *
+    * @property KeyedDataBag $main_parameters Global Omnipay main parameters ( key = value format )
     * @package Grayl\Omnipay\Common
     */
    trait OmnipayMainParametersTrait
    {
-
-      /**
-       * Global Omnipay main parameters ( key = value format )
-       *
-       * @var KeyedDataBag
-       */
-      private KeyedDataBag $main_parameters;
-
 
       /**
        * Sets the transaction id

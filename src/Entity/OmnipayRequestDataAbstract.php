@@ -5,7 +5,6 @@
    use Grayl\Gateway\Common\Entity\RequestDataAbstract;
    use Grayl\Mixin\Common\Entity\FlatDataBag;
    use Grayl\Mixin\Common\Entity\KeyedDataBag;
-   use Grayl\Omnipay\Common\Traits\OmnipayCreditCardParametersTrait;
    use Grayl\Omnipay\Common\Traits\OmnipayMainParametersTrait;
 
    /**
@@ -19,35 +18,34 @@
 
       // Traits
       use OmnipayMainParametersTrait;
-      use OmnipayCreditCardParametersTrait;
 
       /**
        * An array of offsite URLs for this Gateway if it uses external redirects (i.e. Paypal)
        *
        * @var KeyedDataBag
        */
-      private KeyedDataBag $offsite_urls;
+      protected KeyedDataBag $offsite_urls;
 
       /**
        * Global Omnipay main parameters ( key = value format )
        *
        * @var KeyedDataBag
        */
-      private KeyedDataBag $main_parameters;
+      protected KeyedDataBag $main_parameters;
 
       /**
        * Global Omnipay credit card parameters ( key = value format )
        *
        * @var KeyedDataBag
        */
-      private KeyedDataBag $credit_card_parameters;
+      protected KeyedDataBag $credit_card_parameters;
 
       /**
        * An array of Omnipay items
        *
        * @var FlatDataBag
        */
-      private FlatDataBag $items;
+      protected FlatDataBag $items;
 
 
       /**

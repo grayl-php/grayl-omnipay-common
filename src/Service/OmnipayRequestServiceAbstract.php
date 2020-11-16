@@ -69,7 +69,7 @@
          return $this->newResponseDataEntity( $response,
                                               $gateway_data->getGatewayName(),
                                               $action,
-                                              [ 'amount' => $request_data->getMainParameter( 'amount' ) ] );
+                                              [ 'amount' => $request_data->getAmount() ] );
       }
 
 
@@ -110,7 +110,7 @@
          return $this->newResponseDataEntity( $response,
                                               $gateway_data->getGatewayName(),
                                               $action,
-                                              [ 'amount' => $request_data->getMainParameter( 'amount' ) ] );
+                                              [ 'amount' => $request_data->getAmount() ] );
       }
 
 
@@ -150,7 +150,7 @@
          return $this->newResponseDataEntity( $response,
                                               $gateway_data->getGatewayName(),
                                               $action,
-                                              [ 'amount' => $request_data->getMainParameter( 'amount' ) ] );
+                                              [ 'amount' => $request_data->getAmount() ] );
       }
 
 
@@ -203,7 +203,7 @@
          return $this->newResponseDataEntity( $response,
                                               $gateway_data->getGatewayName(),
                                               $action,
-                                              [ 'amount' => $request_data->getMainParameter( 'amount' ) ] );
+                                              [ 'amount' => $request_data->getAmount() ] );
       }
 
 
@@ -244,7 +244,7 @@
          return $this->newResponseDataEntity( $response,
                                               $gateway_data->getGatewayName(),
                                               $action,
-                                              [ 'amount' => $request_data->getMainParameter( 'amount' ) ] );
+                                              [ 'amount' => $request_data->getAmount() ] );
       }
 
 

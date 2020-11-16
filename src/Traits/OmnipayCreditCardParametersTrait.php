@@ -8,18 +8,11 @@
     * Trait OmnipayCreditCardParametersTrait.
     * The trait for manipulating Omnipay credit card parameters in a OmnipayRequestDataAbstract entity.
     *
+    * @property KeyedDataBag $credit_card_parameters Global Omnipay credit card parameters ( key = value format )
     * @package Grayl\Omnipay\Common
     */
    trait OmnipayCreditCardParametersTrait
    {
-
-      /**
-       * Global Omnipay credit card parameters ( key = value format )
-       *
-       * @var KeyedDataBag
-       */
-      private KeyedDataBag $credit_card_parameters;
-
 
       /**
        * Sets the  first name
