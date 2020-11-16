@@ -50,7 +50,8 @@
                                      ->authorize( $request_data->getMainParameters() );
 
          // If there are credit card parameters for this request
-         if ( ! empty( $request_data->getCreditCardParameters() ) ) {
+         if ( method_exists( $request_data,
+                             'getCreditCardParameters' ) && ! empty( $request_data->getCreditCardParameters() ) ) {
             // Set the card parameters into a new object
             $api_request->setCard( new CreditCard( $request_data->getCreditCardParameters() ) );
          }
