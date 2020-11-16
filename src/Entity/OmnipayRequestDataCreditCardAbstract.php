@@ -6,8 +6,8 @@
    use Grayl\Omnipay\Common\Traits\OmnipayCreditCardParametersTrait;
 
    /**
-    * Abstract class OmnipayRequestDataAbstract
-    * The abstract entity for all requests to an Omnipay gateway
+    * Abstract class OmnipayRequestDataCreditCardAbstract
+    * The abstract entity for all requests with credit card data to an Omnipay gateway
     *
     * @package Grayl\Omnipay\Common
     */

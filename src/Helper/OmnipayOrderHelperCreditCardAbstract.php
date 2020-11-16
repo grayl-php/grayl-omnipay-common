@@ -7,7 +7,7 @@
    use Grayl\Store\Order\Entity\OrderCustomer;
 
    /**
-    * A package of functions for working with Omnipay and orders
+    * A package of functions for working with Omnipay with credit card data and orders
     * These are kept isolated to maintain separation between the main library and specific user functionality
     *
     * @package Grayl\Omnipay\Common

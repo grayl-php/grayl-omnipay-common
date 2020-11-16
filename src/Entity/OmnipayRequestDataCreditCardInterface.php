@@ -3,8 +3,8 @@
    namespace Grayl\Omnipay\Common\Entity;
 
    /**
-    * Interface OmnipayRequestDataInterface
-    * This interface describes all Omnipay gateway requests
+    * Interface OmnipayRequestDataCreditCardInterface
+    * This interface describes all Omnipay gateway requests with credit card data
     *
     * @package Grayl\Omnipay\Common
     */
