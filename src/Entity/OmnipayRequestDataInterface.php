@@ -85,34 +85,6 @@
 
 
       /**
-       * Sets a single credit card parameter
-       *
-       * @param string $key   The key name for the credit card parameter
-       * @param mixed  $value The value of the credit card parameter
-       */
-      public function setCreditCardParameter ( string $key,
-                                               ?string $value ): void;
-
-
-      /**
-       * Retrieves the value of a stored credit card parameter
-       *
-       * @param string $key The key name for the credit card parameter
-       *
-       * @return mixed
-       */
-      public function getCreditCardParameter ( string $key );
-
-
-      /**
-       * Retrieves the entire array of credit card parameters
-       *
-       * @return array
-       */
-      public function getCreditCardParameters (): array;
-
-
-      /**
        * Gets the array of items
        *
        * @return array
@@ -123,8 +95,12 @@
       /**
        * Puts a new item into the bag of items
        *
-       * @param array $item The array to store
+       * @param string $name     The item display name
+       * @param int    $quantity The item quantity
+       * @param float  $price    The price of the item
        */
-      public function putItem ( array $item ): void;
+      public function putItem ( string $name,
+                                int $quantity,
+                                float $price ): void;
 
    }

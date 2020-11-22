@@ -5,46 +5,40 @@
    use Grayl\Gateway\Common\Entity\RequestDataAbstract;
    use Grayl\Mixin\Common\Entity\FlatDataBag;
    use Grayl\Mixin\Common\Entity\KeyedDataBag;
+   use Grayl\Omnipay\Common\Traits\OmnipayMainParametersTrait;
 
    /**
     * Abstract class OmnipayRequestDataAbstract
     * The abstract entity for all requests to an Omnipay gateway
-    * TODO: "items" needs an entity instead of just an array structure?
     *
     * @package Grayl\Omnipay\Common
     */
    abstract class OmnipayRequestDataAbstract extends RequestDataAbstract implements OmnipayRequestDataInterface
    {
 
+      // Traits
+      use OmnipayMainParametersTrait;
+
       /**
-       * An array of offsite URLs for this Gateway if it uses external redirects
-       * Example: Paypal
-       * URLS are unique to API environment (sandbox or live)
+       * An array of offsite URLs for this Gateway if it uses external redirects (i.e. Paypal)
        *
        * @var KeyedDataBag
        */
-      private KeyedDataBag $offsite_urls;
+      protected KeyedDataBag $offsite_urls;
 
       /**
-       * Global main parameters ( key = value format )
+       * Global Omnipay main parameters ( key = value format )
        *
        * @var KeyedDataBag
        */
-      private KeyedDataBag $main_parameters;
+      protected KeyedDataBag $main_parameters;
 
       /**
-       * Global credit card parameters ( key = value format )
-       *
-       * @var KeyedDataBag
-       */
-      private KeyedDataBag $credit_card_parameters;
-
-      /**
-       * An array of items
+       * An array of Omnipay items
        *
        * @var FlatDataBag
        */
-      private FlatDataBag $items;
+      protected FlatDataBag $items;
 
 
       /**
@@ -61,10 +55,9 @@
          parent::__construct( $action );
 
          // Create the bags
-         $this->offsite_urls           = new KeyedDataBag();
-         $this->main_parameters        = new KeyedDataBag();
-         $this->credit_card_parameters = new KeyedDataBag();
-         $this->items                  = new FlatDataBag();
+         $this->offsite_urls    = new KeyedDataBag();
+         $this->main_parameters = new KeyedDataBag();
+         $this->items           = new FlatDataBag();
 
          // Set the class data
          $this->setOffsiteURLs( $offsite_urls );
@@ -186,50 +179,6 @@
 
 
       /**
-       * Sets a single credit card parameter
-       *
-       * @param string $key   The key name for the credit card parameter
-       * @param mixed  $value The value of the credit card parameter
-       */
-      public function setCreditCardParameter ( string $key,
-                                               ?string $value ): void
-      {
-
-         // Set the credit card parameter
-         $this->credit_card_parameters->setVariable( $key,
-                                                     $value );
-      }
-
-
-      /**
-       * Retrieves the value of a stored credit card parameter
-       *
-       * @param string $key The key name for the credit card parameter
-       *
-       * @return mixed
-       */
-      public function getCreditCardParameter ( string $key )
-      {
-
-         // Return the value
-         return $this->credit_card_parameters->getVariable( $key );
-      }
-
-
-      /**
-       * Retrieves the entire array of credit card parameters
-       *
-       * @return array
-       */
-      public function getCreditCardParameters (): array
-      {
-
-         // Return all credit card parameters
-         return $this->credit_card_parameters->getVariables();
-      }
-
-
-      /**
        * Gets the array of items
        *
        * @return array
@@ -245,13 +194,19 @@
       /**
        * Puts a new item into the bag of items
        *
-       * @param array $item The array to store
+       * @param string $name     The item display name
+       * @param int    $quantity The item quantity
+       * @param float  $price    The price of the item
        */
-      public function putItem ( array $item ): void
+      public function putItem ( string $name,
+                                int $quantity,
+                                float $price ): void
       {
 
          // Store the item
-         $this->items->putPiece( $item );
+         $this->items->putPiece( [ 'name'     => $name,
+                                   'quantity' => $quantity,
+                                   'price'    => $price, ] );
       }
 
    }
