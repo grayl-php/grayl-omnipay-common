@@ -4,8 +4,10 @@
 
    use Grayl\Gateway\Common\GatewayPorterAbstract;
    use Grayl\Omnipay\Common\Config\OmnipayConfigAbstract;
+   use Grayl\Omnipay\Common\Controller\OmnipayResponseControllerAbstract;
    use Grayl\Omnipay\Common\Entity\OmnipayGatewayCreditCard;
    use Grayl\Omnipay\Common\Entity\OmnipayGatewayDataAbstract;
+   use Grayl\Omnipay\Common\Entity\OmnipayGatewayOffsiteCustomer;
 
    /**
     * Abstract class OmnipayPorterAbstract
@@ -59,6 +61,20 @@
                                               $month,
                                               $year,
                                               $cvv );
+      }
+
+
+      /**
+       * Creates an OmnipayGatewayOffsiteCustomer from offsite payment data returned in an OmnipayResponseControllerAbstract
+       *
+       * @param OmnipayResponseControllerAbstract $response The response object to use
+       *
+       * @return OmnipayGatewayOffsiteCustomer
+       * @noinspection PhpInconsistentReturnPointsInspection
+       */
+      public function newOmnipayGatewayOffsiteCustomerFromResponse ( OmnipayResponseControllerAbstract $response ): OmnipayGatewayOffsiteCustomer
+      {
+         // Not implemented by all gateways
       }
 
    }

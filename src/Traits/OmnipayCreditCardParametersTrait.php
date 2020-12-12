@@ -75,14 +75,14 @@
       /**
        * Sets the email
        *
-       * @param string $email The email
+       * @param string $email_address The email address
        */
-      public function setEmail ( string $email ): void
+      public function setEmail ( string $email_address ): void
       {
 
          // Set the email
          $this->credit_card_parameters->setVariable( 'email',
-                                                     $email );
+                                                     $email_address );
 
       }
 
@@ -307,14 +307,14 @@
       /**
        * Sets the credit card number
        *
-       * @param string $number The credit card number
+       * @param string $credit_card_number The credit card number
        */
-      public function setCreditCardNumber ( string $number ): void
+      public function setCreditCardNumber ( string $credit_card_number ): void
       {
 
          // Set the number
          $this->credit_card_parameters->setVariable( 'number',
-                                                     $number );
+                                                     $credit_card_number );
 
       }
 
@@ -336,14 +336,14 @@
       /**
        * Sets the credit card expiry month
        *
-       * @param string $month The credit card expiry month (2 digit)
+       * @param string $expiry_month The credit card expiry month (2 digit)
        */
-      public function setCreditCardExpiryMonth ( string $month ): void
+      public function setCreditCardExpiryMonth ( string $expiry_month ): void
       {
 
          // Set the expiry month
          $this->credit_card_parameters->setVariable( 'expiryMonth',
-                                                     $month );
+                                                     $expiry_month );
 
       }
 
@@ -365,14 +365,14 @@
       /**
        * Sets the credit card expiry year
        *
-       * @param string $year The credit card expiry year (4 digit)
+       * @param string $expiry_year The credit card expiry year (4 digit)
        */
-      public function setCreditCardExpiryYear ( string $year ): void
+      public function setCreditCardExpiryYear ( string $expiry_year ): void
       {
 
          // Set the expiry year
          $this->credit_card_parameters->setVariable( 'expiryYear',
-                                                     $year );
+                                                     $expiry_year );
 
       }
 
@@ -392,9 +392,9 @@
 
 
       /**
-       * Sets the credit card cvv
+       * Sets the credit card CVV
        *
-       * @param string $cvv The credit card cvv
+       * @param string $cvv The credit card CVV
        */
       public function setCreditCardCVV ( string $cvv ): void
       {
@@ -407,7 +407,7 @@
 
 
       /**
-       * Gets the credit card cvv
+       * Gets the credit card CVV
        *
        * @return ?string
        */

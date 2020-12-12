@@ -3,7 +3,9 @@
    namespace Grayl\Omnipay\Common;
 
    use Grayl\Gateway\Common\GatewayPorterInterface;
+   use Grayl\Omnipay\Common\Controller\OmnipayResponseControllerAbstract;
    use Grayl\Omnipay\Common\Entity\OmnipayGatewayCreditCard;
+   use Grayl\Omnipay\Common\Entity\OmnipayGatewayOffsiteCustomer;
 
    /**
     * Interface OmnipayInjectorInterface
@@ -36,5 +38,15 @@
                                                     int $month,
                                                     int $year,
                                                     string $cvv ): OmnipayGatewayCreditCard;
+
+
+      /**
+       * Creates an OmnipayGatewayOffsiteCustomer from offsite payment data returned in an OmnipayResponseControllerAbstract
+       *
+       * @param OmnipayResponseControllerAbstract $response The response object to use
+       *
+       * @return OmnipayGatewayOffsiteCustomer
+       */
+      public function newOmnipayGatewayOffsiteCustomerFromResponse ( OmnipayResponseControllerAbstract $response ): OmnipayGatewayOffsiteCustomer;
 
    }
